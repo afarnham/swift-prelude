@@ -5,7 +5,6 @@ let package = Package(
   name: "Prelude",
   products: [
     .library(name: "Either", targets: ["Either"]),
-    .library(name: "Frp", targets: ["Frp"]),
     .library(name: "Optics", targets: ["Optics"]),
     .library(name: "Prelude", targets: ["Prelude"]),
     .library(name: "Reader", targets: ["Reader"]),
@@ -20,9 +19,6 @@ let package = Package(
   targets: [
     .target(name: "Either", dependencies: ["Prelude"]),
     .testTarget(name: "EitherTests", dependencies: ["Either"]),
-
-    .target(name: "Frp", dependencies: ["Prelude", "ValidationSemigroup"]),
-    .testTarget(name: "FrpTests", dependencies: ["Frp"]),
 
     .target(name: "Optics", dependencies: ["Prelude", "Either"]),
     .testTarget(name: "OpticsTests", dependencies: ["Optics"]),
